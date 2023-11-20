@@ -1,0 +1,12 @@
+services:
+  app:
+    image: node:21
+    volumes:
+      - ./:/nextjs
+    working_dir: /nextjs
+    environment:
+      PORT: 4000
+    ports:
+      - 4000:4000
+    tty: true
+    stdin_open: true
