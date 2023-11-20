@@ -1,0 +1,7 @@
+.background {
+  transform:skew(0deg, -5deg) !important;
+}
+/* 子要素は戻す */
+.container {
+  transform:skew(0deg, 5deg);
+}

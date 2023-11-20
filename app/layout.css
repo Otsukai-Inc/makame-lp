@@ -1,4 +1,4 @@
-body {
+#layout-main {
   color: rgb(var(--background-rgb));
   background: rgb(var(--foreground-rgb));
 }
