@@ -5,14 +5,14 @@ import SkewSection from '@/components/pages/home/skew-section'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <SkewBg className='absolute' paddings="py-32 -mt-28" background='white'>
-        <header className="w-full flex justify-center">
-          <Image src="/logo.svg" alt="logo" className='h-auto' width={325} height={126} />
-        </header>
-      </SkewBg>
-
       {/* Hero */}
-      <div className='flex justify-center w-full pt-40 pb-40 bg-gradient-to-b from-brand to-[#2CA9D7]'>
+      <div className='flex justify-center w-full py-20 bg-gradient-to-b from-brand to-[#2CA9D7] relative'>
+        <header className="absolute w-full -mt-20">
+          <SkewBg background='white' padding="py-4" className='flex justify-center'>
+            <Image src="/logo.svg" alt="logo" className='h-auto' width={325} height={126} />
+          </SkewBg>
+        </header>
+
         <section className={`w-3/4 pt-20`}>
           <div className='flex flex-col md:flex-row items-center justify-center'>
             {/* テキスト */}
@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       {/* Content Description */}
-      <SkewBg background='dot'>
+      <SkewBg background='dot' className='-mt-20'>
         <SkewSection
           heading={<>ホームページを<span className='text-brand'>すべておまかせ</span>で作れます</>}
         >

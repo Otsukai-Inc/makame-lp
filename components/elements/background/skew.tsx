@@ -4,22 +4,22 @@ interface Props {
   children: React.ReactNode;
   className?: string;
   background?: 'brand' | 'dot' | 'gray' | 'white' | 'none';
-  paddings?: string;
+  padding?: string;
 }
 
 export default function BackgroundSkew(props: Props) {
   const backgroundClass = {
-    brand: 'bg-gradient-to-b from-brand to-[#2CA9D7]',
+    brand: 'after:bg-gradient-to-b from-brand to-[#2CA9D7]',
     dot: styles.bgdot,
-    gray: 'bg-gray-100',
-    white: 'bg-white',
+    gray: 'after:bg-gray-100',
+    white: 'after:bg-white',
     none: '',
   }[props.background ?? 'none']
 
-  const paddingsClass = props.paddings ?? `py-60 -mt-60`
+  const padding = props.padding ?? 'py-16'
 
   return (
-    <div className={`${styles.background} ${backgroundClass} ${paddingsClass} w-full ${props.className ?? ''}`}>
+    <div className={`${styles.background} ${backgroundClass} ${padding} w-full ${props.className ?? ''}`}>
       {props.children}
     </div>
   )
