@@ -270,14 +270,47 @@ export default function Home() {
         <SkewSection
           heading='FAQ'
         >
+          <ul className='w-full'>
+            {
+              [
+                {
+                  heading: 'どんなホームページが作れますか？',
+                  content: 'TOPページ、サービス紹介、求人、新着情報、会社情報、お問い合わせ、のような形で、6ページまでの一般的なホームページを制作いたします。\n制作例はこちらからご覧いただけます。\nお客様がホームページを持ちたいと考えた理由をヒアリングさせていただいた上で、私たちから最適なご提案を行いますので、具体的なイメージがなくてもご安心くださいませ。',
+                },
+                {
+                  heading: '追加料金や、ほかに何かお金はかかりますか？',
+                  content: `初回事務手数料${numberFormatter.format(price)}円（税込価格${numberFormatter.format(price * taxRate)}円）と、公開後に月額${numberFormatter.format(price)}円（税込価格${numberFormatter.format(price * taxRate)}円）をお支払いいただくのみで、そのほかは一切不要です。\nただし、ホームページのレイアウトを含めた大規模な更新やページの追加などは、別途お見積りが必要となりますので予めご了承くださいませ。`
+                },
+                {
+                  heading: '解約はできますか？また解約金はありますか？',
+                  content: '掲載開始月の翌月から解約が可能です。解約金などは一切ございません。\n※ すぐに解約する事を前提としたご契約はご遠慮下さいませ。'
+                },
+                {
+                  heading: '更新はどうすればいいですか？',
+                  content: '更新は弊社担当へご連絡ください。毎月5回まで無料で対応させていただきます。最新情報の更新や、画像・テキストの変更、フォームの追加など、基本的な更新は、2営業日以内に対応いたします。\n※ お急ぎの場合はできる限りすぐに対応いたしますので、お申し付けください。',
+                },
+              ].map(({heading, content}, index) => (
+                <li key={index} className='
+                  border rounded-xl
+                  p-6 md:p-10
+                  mb-6
+                '>
+                  <div className='font-bold mb-4'>
+                    {heading}
+                  </div>
+                  <div className='whitespace-pre-wrap'>{content}</div>
+                </li>
+              ))
+            }
+          </ul>
         </SkewSection>
       </SkewBg>
 
       {/* ご紹介キャンペーン */}
       <SkewBg background='brand'>
         <SkewSection>
-          <Image src="/home/campaign-ttl.png" alt="ご紹介キャンペーン" width={100} height={100} />
-          <Image src="/home/campaign-cashback.png" alt="7800円キャッシュバック" width={100} height={100} />
+          <Image src="/home/campaign-ttl.png" alt="ご紹介キャンペーン" width={681/2} height={69/2} />
+          <Image src="/home/campaign-cashback.png" alt="7800円キャッシュバック" width={1096/2} height={520/2} className='mb-6' />
           <p className='text-white'>ご紹介いただいたお客様がご契約された場合、ご紹介者様に初回事務手数料をご返金いたします。</p>
         </SkewSection>
       </SkewBg>
