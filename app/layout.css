@@ -2,3 +2,7 @@
   color: rgb(var(--background-rgb));
   background: rgb(var(--foreground-rgb));
 }
+
+.c-bg-marker-primary {
+  background: linear-gradient(transparent 50%, var(--color-primary) 0%);
+}

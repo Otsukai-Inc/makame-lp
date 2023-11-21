@@ -1,7 +1,15 @@
 .background {
-  transform:skew(0deg, -5deg) !important;
+  /*  py-60相当の角度をつける */
+  clip-path: polygon(
+    0 15rem, /* 上の角度 */
+    100% 0,
+    100% calc(100% - 15rem), /* 下の角度 */
+    0 100%
+  );
 }
-/* 子要素は戻す */
-.container {
-  transform:skew(0deg, 5deg);
+/* ドット背景 */
+.bgdot {
+  background-color: white;
+  background-image: radial-gradient(black 2%, transparent 3%);
+  background-size: 40px 40px;
 }
