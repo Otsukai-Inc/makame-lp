@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
+  const numberFormatter = new Intl.NumberFormat('ja-JP');
+  const price = 7900;
+  const taxRate = 1.1;
   return (
     <main className="flex min-h-screen flex-col items-center">
       {/* Hero */}
@@ -20,7 +23,7 @@ export default function Home() {
             {/* テキスト */}
             <div className='text-white md:w-1/2'>
               <h6>ホームページのサブスク</h6>
-              <h1>制作費無料、月々7,900円でホームページを</h1>
+              <h1>制作費無料、月々{numberFormatter.format(price)}円でホームページを</h1>
               <p>マカミーは、中小企業・個人事業主に特化したホームページの月額定額サービスです。</p>
               <ul>
                 <li>制作費無料</li>
@@ -75,6 +78,49 @@ export default function Home() {
         <SkewSection
           heading={<><span className='text-brand'>おまかせプラン</span>について</>}
         >
+          <ul className='w-full'>
+            {/* Point 01 ~ 03のカード */}
+            {
+              [
+                {
+                  heading: `月額${numberFormatter.format(price)}円で、いつでも解約が可能`,
+                  description: <>
+                    <p className='mb-4'>通常、数十万円かかるホームページと同じクオリティのホームページが、月額{numberFormatter.format(price)}円（税込価格{numberFormatter.format(price * taxRate)}円）で持つことができます。<br />いつでも解約が可能で、長期の契約縛りもありません。</p>
+                    <small className='text-gray-500'>※ 初回のみ事務手数料{numberFormatter.format(price)}円（税込価格{numberFormatter.format(price * taxRate)}円）がかかります。</small>
+                  </>
+                },
+                {
+                  heading: 'すべて”おまかせ”大歓迎です',
+                  description: '面倒なドメイン取得やサーバーの契約もすべて私たちが行います。\nその他、問い合わせフォーム、SNS連携、独自ドメインの実装など、お客様のビジネス目的に合わせて最適な機能を選定し、目的を叶えるホームページをご提案いたします。'
+                },
+                {
+                  heading: '更新作業もおまかせください',
+                  description: <>
+                    <p className='mb-4'>
+                      更新作業は、月5回まで無料です。<br />画像の変更やテキスト変更、お知らせページの更新など臨機応変に対応いたします。
+                    </p>
+                    <small className='text-gray-500'>※ 大きなレイアウト変更やページ追加などは別途ご相談となります。</small>
+                  </>
+                },
+              ].map(({heading, description}, index) => (
+                <li key={index} className='
+                  bg-white
+                  rounded-xl
+                  drop-shadow-md
+                  p-6 md:p-10
+                  mb-6
+                '>
+                  <Image src={`/home/about-plan-0${index + 1}.png`} alt={heading} className='w-1/2 md:w-1/4 mx-auto' width={940/3} height={994/3} />
+                  <h6 className='flex items-center mb-4'>
+                    <span className='text-white text-xs font-bold px-2 mr-2 bg-[url(/home/about-plan-point-bg.svg)] bg-contain bg-center bg-no-repeat'>Point</span>
+                    <span className='text-brand font-bold text-4xl'>0{index + 1}</span>
+                  </h6>
+                  <h3 className='font-bold text-xl mb-4'>{heading}</h3>
+                  <div className='whitespace-pre-wrap'>{description}</div>
+                </li>
+              ))
+            }
+          </ul>
         </SkewSection>
       </SkewBg>
 
@@ -83,6 +129,71 @@ export default function Home() {
         <SkewSection
           heading='他サービスとの比較'
         >
+          <table className='font-bold w-full border-none'>
+            <thead>
+              <tr>
+                <th className='bg-gray-100 rounded-tl-xl border'></th>
+                <th className='bg-brand text-white'>マカミー</th>
+                <th className='bg-gray-400 text-white'>A社<br />(サブスクWEB提供)</th>
+                <th className='bg-gray-400 text-white rounded-tr-xl border'>B社<br />(格安WEB制作提供)</th>
+              </tr>
+            </thead>
+            <tbody className='text-center'>
+            {
+              // テーブルコンテンツ
+              [
+                {
+                  heading: '初期費用',
+                  makame: numberFormatter.format(price),
+                  a: numberFormatter.format(5000),
+                  b: numberFormatter.format(59800),
+                },
+                {
+                  heading: '月額料金',
+                  makame: numberFormatter.format(price),
+                  a: numberFormatter.format(9800),
+                  b: numberFormatter.format(9800),
+                },
+                {
+                  heading: 'ページ数',
+                  makame: '6',
+                  a: '1',
+                  b: '1',
+                },
+                {
+                  heading: '画像、文章、デザイン全ておまかせ',
+                  makame: '◯',
+                  a: '文章のみ',
+                  b: '追加オプション',
+                },
+                {
+                  heading: 'サイト更新',
+                  makame: '毎月5回 更新無料',
+                  a: <>3回まで無料<br />※ 作業時間制限あり</>,
+                  b: '都度見積もり',
+                },
+                {
+                  heading: '制作期間',
+                  makame: '約1〜3週間',
+                  a: '約3〜4週間',
+                  b: '約1〜2ヶ月',
+                },
+                {
+                  heading: '解約条件',
+                  makame: 'なし',
+                  a: '最低1年契約',
+                  b: 'なし',
+                }
+              ].map(({heading, makame, a, b}, index) => (
+                <tr key={index} className=''>
+                  <td className='bg-gray-100 border'>{heading}</td>
+                  <td className='bg-white text-brand border'>{makame}</td>
+                  <td className='bg-white border'>{a}</td>
+                  <td className='bg-white border'>{b}</td>
+                </tr>
+              ))
+            }</tbody>
+          </table>
         </SkewSection>
       </SkewBg>
 
