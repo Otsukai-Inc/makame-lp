@@ -209,6 +209,59 @@ export default function Home() {
         <SkewSection
           heading='ご利用の流れ'
         >
+          <div className='w-full bg-white rounded-xl drop-shadow-md py-12 px-16'>
+            <dl>
+              {
+                [
+                  {
+                    heading: '申し込み',
+                    description: '簡単な申し込みフォームから質問にお答えください。基本情報から最適なホームページを制作。',
+                  },
+                  {
+                    heading: 'オンラインヒアリング',
+                    description: <>
+                      <p className='mb-4'>オンラインミーティングでお客様の要望をくみ取り、理想のデザインや機能について詳細に話し合います。</p>
+                      <p className='text-gray-400'>※ 必要ない場合は、フォーム入力の内容のみでご提案を行います</p>
+                    </>,
+                  },
+                  {
+                    heading: '撮影',
+                    description: <>
+                      <p className='mb-4'>専門フォトグラファーがビジネス魅力を最高のアングルで撮影。製品やサービスの魅力を引き立てます。</p>
+                      <p className='text-gray-400'>※ 必要ない場合は、撮影をなくす事ができます</p>
+                    </>,
+                  },
+                  {
+                    heading: 'デザイン&制作',
+                    description: 'プロデザイナーがお客様の要望に基づき、使いやすく魅力的なサイトを制作。お客様のビジョンを具現化。',
+                  },
+                  {
+                    heading: '公開',
+                    description: '制作完了後、新しいホームページを公開。お客様の満足のいくよう、問題なく公開いたします。',
+                  },
+                ].map(({heading, description}, index) => (
+                  <div key={index} className={`relative pb-4 border-l-4 ${index < 4 ? 'border-brand' : 'border-white'}`}>
+                    <dt className='
+                      absolute -left-10
+                      bg-brand text-white
+                      rounded-full w-20 h-20
+                      flex flex-col items-center justify-center
+                    '>
+                      <div className='text-xs pb-1 border-b border-white'>Step</div>
+                      <div className='font-bold text-4xl'>0{index + 1}</div>
+                    </dt>
+                    <dd className='pl-12'>
+                      <h3 className='font-bold text-xl mb-4'>{heading}</h3>
+                      <div>{description}</div>
+                      <div className='flex justify-center'>
+                        <Image src={`/home/getting-started-${index + 1}.png`} alt={heading} width={208/2} height={208/2} />
+                      </div>
+                    </dd>
+                  </div>
+                ))
+              }
+            </dl>
+          </div>
         </SkewSection>
       </SkewBg>
 
