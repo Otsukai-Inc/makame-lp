@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import SkewBg from '@/components/elements/background/skew'
 import SkewSection from '@/components/pages/home/skew-section'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
@@ -41,7 +43,7 @@ export default function Home() {
           heading={<>ホームページを<span className='text-brand'>すべておまかせ</span>で作れます</>}
         >
           <p className='mb-4'>マカミーはこんな方におすすめです</p>
-          <ul className='text-left mb-6'>
+          <ul className='text-left mb-6 w-full'>
             {
               [
                 'プロにすべてまかせたい',
@@ -49,7 +51,17 @@ export default function Home() {
                 'サイトが古いので刷新したい',
                 '更新がなかなかできない',
               ].map((text, index) => (
-                <li key={index}>{text}</li>
+                <li key={index} className='
+                  bg-gray-100
+                  rounded-xl
+                  font-bold
+                  flex items-center
+                  p-6 md:p-10
+                  mb-6
+                '>
+                  <FontAwesomeIcon icon={faCircleCheck} className='mr-4 w-6 text-brand' />
+                  {text}
+                </li>
               ))
             }
           </ul>
