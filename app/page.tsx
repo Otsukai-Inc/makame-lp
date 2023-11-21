@@ -129,71 +129,78 @@ export default function Home() {
         <SkewSection
           heading='他サービスとの比較'
         >
-          <table className='font-bold w-full border-none'>
-            <thead>
-              <tr>
-                <th className='bg-gray-100 rounded-tl-xl border'></th>
-                <th className='bg-brand text-white'>マカミー</th>
-                <th className='bg-gray-400 text-white'>A社<br />(サブスクWEB提供)</th>
-                <th className='bg-gray-400 text-white rounded-tr-xl border'>B社<br />(格安WEB制作提供)</th>
-              </tr>
-            </thead>
-            <tbody className='text-center'>
-            {
-              // テーブルコンテンツ
-              [
-                {
-                  heading: '初期費用',
-                  makame: numberFormatter.format(price),
-                  a: numberFormatter.format(5000),
-                  b: numberFormatter.format(59800),
-                },
-                {
-                  heading: '月額料金',
-                  makame: numberFormatter.format(price),
-                  a: numberFormatter.format(9800),
-                  b: numberFormatter.format(9800),
-                },
-                {
-                  heading: 'ページ数',
-                  makame: '6',
-                  a: '1',
-                  b: '1',
-                },
-                {
-                  heading: '画像、文章、デザイン全ておまかせ',
-                  makame: '◯',
-                  a: '文章のみ',
-                  b: '追加オプション',
-                },
-                {
-                  heading: 'サイト更新',
-                  makame: '毎月5回 更新無料',
-                  a: <>3回まで無料<br />※ 作業時間制限あり</>,
-                  b: '都度見積もり',
-                },
-                {
-                  heading: '制作期間',
-                  makame: '約1〜3週間',
-                  a: '約3〜4週間',
-                  b: '約1〜2ヶ月',
-                },
-                {
-                  heading: '解約条件',
-                  makame: 'なし',
-                  a: '最低1年契約',
-                  b: 'なし',
-                }
-              ].map(({heading, makame, a, b}, index) => (
-                <tr key={index} className=''>
-                  <td className='bg-gray-100 border'>{heading}</td>
-                  <td className='bg-white text-brand border'>{makame}</td>
-                  <td className='bg-white border'>{a}</td>
-                  <td className='bg-white border'>{b}</td>
+          <div className='w-full flex justify-start md:justify-center overflow-x-scroll md:overflow-x-auto'>
+            {/* テーブルに角丸つける @see https://jito-site.com/css-table-radius/ */}
+            <table className='
+              font-bold
+              min-w-[50rem] md:min-w-full
+              border-t border-l border-separate border-spacing-0 rounded-xl
+            '>
+              <thead>
+                <tr>
+                  <th className='bg-gray-100 border-r border-b rounded-tl-xl w-64 py-4'></th>
+                  <th className='bg-brand text-white border-r border-b w-64 py-4'>マカミー</th>
+                  <th className='bg-gray-400 text-white border-r border-b w-64 py-4'>A社<br />(サブスクWEB提供)</th>
+                  <th className='bg-gray-400 text-white border-r border-b w-64 rounded-tr-xl py-4'>B社<br />(格安WEB制作提供)</th>
                 </tr>
-              ))
-            }</tbody>
-          </table>
+              </thead>
+              <tbody className='text-center'>
+              {
+                // テーブルコンテンツ
+                [
+                  {
+                    heading: '初期費用',
+                    makame: `${numberFormatter.format(price)}円`,
+                    a: `${numberFormatter.format(5000)}円`,
+                    b: `${numberFormatter.format(59800)}円`,
+                  },
+                  {
+                    heading: '月額料金',
+                    makame: `${numberFormatter.format(price)}円`,
+                    a: `${numberFormatter.format(9800)}円`,
+                    b: `${numberFormatter.format(9800)}円`,
+                  },
+                  {
+                    heading: 'ページ数',
+                    makame: '6',
+                    a: '1',
+                    b: '1',
+                  },
+                  {
+                    heading: '画像、文章、デザイン全ておまかせ',
+                    makame: '◯',
+                    a: '文章のみ',
+                    b: '追加オプション',
+                  },
+                  {
+                    heading: 'サイト更新',
+                    makame: '毎月5回 更新無料',
+                    a: <>3回まで無料<br />※ 作業時間制限あり</>,
+                    b: '都度見積もり',
+                  },
+                  {
+                    heading: '制作期間',
+                    makame: '約1〜3週間',
+                    a: '約3〜4週間',
+                    b: '約1〜2ヶ月',
+                  },
+                  {
+                    heading: '解約条件',
+                    makame: 'なし',
+                    a: '最低1年契約',
+                    b: 'なし',
+                  }
+                ].map(({heading, makame, a, b}, index) => (
+                  <tr key={index}>
+                    <td className={`bg-gray-100 border-r border-b py-4 px-12 ${index == 6 ? 'rounded-bl-xl' : ''}`}>{heading}</td>
+                    <td className='bg-white border-r border-b text-brand py-4'>{makame}</td>
+                    <td className='bg-white border-r border-b py-4'>{a}</td>
+                    <td className={`bg-white border-r border-b py-4 ${index == 6 ? 'rounded-br-xl' : ''}`}>{b}</td>
+                  </tr>
+                ))
+              }</tbody>
+            </table>
+          </div>
         </SkewSection>
       </SkewBg>
 
