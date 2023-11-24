@@ -336,7 +336,7 @@ export default function Home() {
       </SkewBg>
 
       {/* Footer */}
-      <footer className='pt-20 pb-40 text-center'>
+      <footer className='pt-20 pb-48 text-center'>
         <div className='flex justify-center'>
           <Image src="/logo.svg" alt="logo" width={132} height={51} />
         </div>
@@ -357,6 +357,23 @@ export default function Home() {
           © Otsukai All Rights Reserved.
         </div>
       </footer>
+
+      <aside className='fixed flex justify-center bottom-6'>
+        <a href="https://otsukai.com" className='
+          block
+          bg-primary
+          brightness-100 hover:brightness-105 transition duration-300
+          py-4 px-16
+          drop-shadow-md
+          text-center
+          rounded-full
+          font-bold
+        '>
+          <p className=''>＼ お気軽にお問い合わせください ／</p>
+          <p className='text-2xl my-3'>お申し込みはこちら</p>
+          <div className='text-sm inline-block bg-white text-red-500 p-1'>申し込み無料</div>
+        </a>
+      </aside>
     </main>
   )
 }
