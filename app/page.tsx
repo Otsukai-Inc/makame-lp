@@ -221,14 +221,14 @@ export default function Home() {
                     heading: 'オンラインヒアリング',
                     description: <>
                       <p className='mb-4'>オンラインミーティングでお客様の要望をくみ取り、理想のデザインや機能について詳細に話し合います。</p>
-                      <p className='text-gray-400'>※ 必要ない場合は、フォーム入力の内容のみでご提案を行います</p>
+                      <p className='text-hint'>※ 必要ない場合は、フォーム入力の内容のみでご提案を行います</p>
                     </>,
                   },
                   {
                     heading: '撮影',
                     description: <>
                       <p className='mb-4'>専門フォトグラファーがビジネス魅力を最高のアングルで撮影。製品やサービスの魅力を引き立てます。</p>
-                      <p className='text-gray-400'>※ 必要ない場合は、撮影をなくす事ができます</p>
+                      <p className='text-hint'>※ 必要ない場合は、撮影をなくす事ができます</p>
                     </>,
                   },
                   {
@@ -316,16 +316,24 @@ export default function Home() {
       </SkewBg>
 
       {/* Footer */}
-      <footer>
-        <div>
-          <Image src="/logo.svg" alt="logo" width={100} height={100} />
+      <footer className='pt-20 pb-40 text-center'>
+        <div className='flex justify-center'>
+          <Image src="/logo.svg" alt="logo" width={132} height={51} />
         </div>
-        <ul>
-          <li>運営企業</li>
-          <li>利用規約</li>
-          <li>プライバシーポリシー</li>
+        <ul className='font-bold flex justify-center my-10'>
+          {
+            [
+              {href: 'https://otsukai.com/company', text: '運営企業'},
+              {href: 'https://otsukaimangatokyo.freshdesk.com/support/solutions/articles/35000032529', text: '利用規約'},
+              {href: 'https://otsukaimangatokyo.freshdesk.com/support/solutions/articles/35000086437', text: 'プライバシーポリシー'},
+            ].map(({href, text}, index) => (
+              <li key={index} className='px-2'>
+                <a href={href}>{text}</a>
+              </li>
+            ))
+          }
         </ul>
-        <div>
+        <div className='text-hint'>
           © Otsukai All Rights Reserved.
         </div>
       </footer>

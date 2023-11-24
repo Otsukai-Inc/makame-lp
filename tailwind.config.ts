@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+const colors = require('tailwindcss/colors')
 
 const config: Config = {
   content: [
@@ -11,6 +12,7 @@ const config: Config = {
       colors: {
         brand: 'var(--color-brand)',
         primary: 'var(--color-primary)',
+        hint: '#9ca3af', // gray-400
       },
     },
     // @see https://tailwindcss.com/docs/container#centering-by-default,
