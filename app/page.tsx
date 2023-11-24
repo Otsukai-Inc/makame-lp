@@ -25,12 +25,34 @@ export default function Home() {
             <div className='text-white md:w-1/2 text-center md:text-left'>
               <h6 className='mb-4 font-bold tracking-widest'>ホームページのサブスク</h6>
               <h1 className='mb-4 font-bold text-[10vw] md:text-[5vw] md:leading-relaxed'>制作費無料、<br />月々{numberFormatter.format(price)}円でホームページを</h1>
-              <p className='mb-4'>マカミーは、<br />中小企業・個人事業主に特化したホームページの月額定額サービスです。</p>
-              <ul className='flex items-center'>
-                <li>制作費無料</li>
-                <li>運用までトータルサポート</li>
-                <li>いつでも解約OK</li>
-              </ul>
+              <p className='mb-8'>マカミーは、<br />中小企業・個人事業主に特化したホームページの月額定額サービスです。</p>
+
+              <div className='flex items-center justify-center md:justify-start'>
+                <ul className='
+                  grid grid-flow-col gap-4 auto-cols-max
+                '>
+                  {
+                    [
+                      '制作費\n無料',
+                      '運用まで\nトータル\nサポート',
+                      'いつでも\n解約OK',
+                    ].map((text, index) => (
+                      <li key={index} className='
+                        bg-[url(/home/circle-frame.svg)] bg-no-repeat bg-center bg-contain
+                        flex items-center justify-center
+                        text-center
+                        h-[116px] w-[116px]
+                      '>
+                        <span className='
+                          font-bold
+                          text-[max(1vw, 1rem)]
+                          whitespace-pre-wrap
+                        '>{text}</span>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
             </div>
 
             {/* 画像 */}
