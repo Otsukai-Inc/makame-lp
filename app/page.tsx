@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import SkewBg from '@/components/elements/background/skew'
 import SkewSection from '@/components/pages/home/skew-section'
+import ToggleContent from '@/components/pages/home/toggle-content'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
@@ -295,10 +296,7 @@ export default function Home() {
                   p-6 md:p-10
                   mb-6
                 '>
-                  <div className='font-bold mb-4'>
-                    {heading}
-                  </div>
-                  <div className='whitespace-pre-wrap'>{content}</div>
+                  <ToggleContent heading={heading}>{content}</ToggleContent>
                 </li>
               ))
             }
