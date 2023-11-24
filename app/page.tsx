@@ -13,20 +13,20 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center">
       {/* Hero */}
       <div className='flex justify-center w-full py-20 bg-gradient-to-b from-brand to-[#2CA9D7] relative'>
-        <header className="absolute w-full -mt-20">
-          <SkewBg background='white' padding="py-4" className='flex justify-center'>
-            <Image src="/logo.svg" alt="logo" className='h-auto' width={325} height={126} />
+        <header className="absolute w-full -mt-16 md:-mt-10">
+          <SkewBg background='white' padding="py-2" className='flex justify-center'>
+            <Image src="/logo.svg" alt="logo" className='w-40 md:w-60 h-auto' width={325} height={126} />
           </SkewBg>
         </header>
 
-        <section className={`w-3/4 pt-20`}>
+        <section className={`w-3/4 pt-40 pb-20`}>
           <div className='flex flex-col md:flex-row items-center justify-center'>
             {/* テキスト */}
-            <div className='text-white md:w-1/2'>
-              <h6>ホームページのサブスク</h6>
-              <h1>制作費無料、月々{numberFormatter.format(price)}円でホームページを</h1>
-              <p>マカミーは、中小企業・個人事業主に特化したホームページの月額定額サービスです。</p>
-              <ul>
+            <div className='text-white md:w-1/2 text-center md:text-left'>
+              <h6 className='mb-4 font-bold tracking-widest'>ホームページのサブスク</h6>
+              <h1 className='mb-4 font-bold text-[10vw] md:text-[5vw] md:leading-relaxed'>制作費無料、<br />月々{numberFormatter.format(price)}円でホームページを</h1>
+              <p className='mb-4'>マカミーは、<br />中小企業・個人事業主に特化したホームページの月額定額サービスです。</p>
+              <ul className='flex items-center'>
                 <li>制作費無料</li>
                 <li>運用までトータルサポート</li>
                 <li>いつでも解約OK</li>
