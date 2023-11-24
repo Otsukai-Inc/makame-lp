@@ -19,10 +19,14 @@ export default function Home() {
           </SkewBg>
         </header>
 
-        <section className={`w-3/4 pt-40 pb-20`}>
+        <section className={`
+          w-4/5 md:w-3/4
+          pt-20 md:pt-40
+          pb-10 md:pb-20
+        `}>
           <div className='flex flex-col md:flex-row items-center justify-center'>
             {/* テキスト */}
-            <div className='text-white md:w-1/2 text-center md:text-left'>
+            <div className='text-white md:w-1/2 text-center md:text-left whitespace-normal'>
               <h6 className='mb-4 font-bold tracking-widest'>ホームページのサブスク</h6>
               <h1 className='mb-4 font-bold text-[10vw] md:text-[5vw] md:leading-relaxed'>制作費無料、<br />月々{numberFormatter.format(price)}円でホームページを</h1>
               <p className='mb-8'>マカミーは、<br />中小企業・個人事業主に特化したホームページの月額定額サービスです。</p>
@@ -41,11 +45,12 @@ export default function Home() {
                         bg-[url(/home/circle-frame.svg)] bg-no-repeat bg-center bg-contain
                         flex items-center justify-center
                         text-center
-                        h-[116px] w-[116px]
+                        h-28 md:h-32
+                        w-28 md:w-32
                       '>
                         <span className='
                           font-bold
-                          text-[max(1vw, 1rem)]
+                          text-sm md:text-base
                           whitespace-pre-wrap
                         '>{text}</span>
                       </li>
