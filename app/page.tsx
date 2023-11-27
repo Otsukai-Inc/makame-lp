@@ -207,23 +207,17 @@ export default function Home() {
                     b: '都度見積もり',
                   },
                   {
-                    heading: '制作期間',
-                    makame: '約1〜3週間',
-                    a: '約3〜4週間',
-                    b: '約1〜2ヶ月',
-                  },
-                  {
                     heading: '解約条件',
                     makame: 'なし',
                     a: '最低1年契約',
                     b: 'なし',
                   }
                 ].map(({heading, makame, a, b}, index) => (
-                  <tr key={index}>
-                    <td className={`bg-gray-100 border-r border-b py-4 px-12 ${index == 6 ? 'rounded-bl-xl' : ''}`}>{heading}</td>
+                  <tr key={index} className='group'>
+                    <td className={`bg-gray-100 border-r border-b py-4 px-12 group-last:rounded-bl-xl`}>{heading}</td>
                     <td className='bg-white border-r border-b text-brand py-4'>{makame}</td>
                     <td className='bg-white border-r border-b py-4'>{a}</td>
-                    <td className={`bg-white border-r border-b py-4 ${index == 6 ? 'rounded-br-xl' : ''}`}>{b}</td>
+                    <td className={`bg-white border-r border-b py-4 group-last:rounded-br-xl`}>{b}</td>
                   </tr>
                 ))
               }</tbody>
@@ -349,7 +343,7 @@ export default function Home() {
           {
             [
               {href: 'https://otsukai.com/company', text: '運営企業'},
-              {href: 'https://otsukaimangatokyo.freshdesk.com/support/solutions/articles/35000032529', text: '利用規約'},
+              // {href: 'https://otsukaimangatokyo.freshdesk.com/support/solutions/articles/35000032529', text: '利用規約'}, // 弁護士間に合ってないのでいったん消す
               {href: 'https://otsukaimangatokyo.freshdesk.com/support/solutions/articles/35000086437', text: 'プライバシーポリシー'},
             ].map(({href, text}, index) => (
               <li key={index} className='px-2'>
@@ -364,7 +358,7 @@ export default function Home() {
       </footer>
 
       <aside className='fixed flex justify-center bottom-6'>
-        <a href="https://otsukai.com" className='
+        <a href="https://forms.gle/8deXzausnXwfdj6t7" className='
           block
           bg-primary
           brightness-100 hover:brightness-105 transition duration-300
@@ -374,7 +368,7 @@ export default function Home() {
           rounded-full
           font-bold
         '>
-          <p className=''>＼ お気軽にお問い合わせください ／</p>
+          <p className='text-sm md:text-base'>＼ お気軽にお問い合わせください ／</p>
           <p className='text-2xl my-3'>お申し込みはこちら</p>
           <div className='text-sm inline-block bg-white text-red-500 p-1'>申し込み無料</div>
         </a>
