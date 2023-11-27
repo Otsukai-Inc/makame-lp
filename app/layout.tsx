@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import './layout.css'
 
-const siteName = 'マカミー';
-const description = '制作費無料、月々7,900円でホームページを。マカミーは、中小企業・個人事業主に特化したホームページの月額定額サービスです。';
+const siteName = 'マカミー | 中小個人専用おまかせホームページ制作サービス - 月額7900円でプロのWebを手に入れよう';
+const description = '中小企業・個人事業向け『マカミー』。初回事務手数料7900円、月額7900円。プロのデザイナーが手がけるおまかせホームページ制作。独自ドメインやSNS連携、更新作業まで全て込み。手軽な価格でWebをまかせてビジネスに専念しましょう';
 const url = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata: Metadata = {
