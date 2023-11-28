@@ -27,7 +27,7 @@ export default function Home() {
           <div className='flex flex-col md:flex-row items-center justify-center'>
             {/* テキスト */}
             <div className='text-white md:w-1/2 text-center md:text-left whitespace-normal'>
-              <h6 className='mb-4 font-bold tracking-widest'>ホームページのサブスク</h6>
+              <h6 className='mb-4 font-bold text-sm tracking-[.5em]'>ホームページのサブスク</h6>
               <h1 className='mb-4 font-bold text-[10vw] md:text-[5vw] md:leading-relaxed'>制作費無料、<br />月々{numberFormatter.format(price)}円でホームページを</h1>
               <p className='mb-8'>マカミーは、<br />中小企業・個人事業主に特化したホームページの月額定額サービスです。</p>
 
