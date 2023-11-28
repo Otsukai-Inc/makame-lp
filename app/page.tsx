@@ -163,15 +163,15 @@ export default function Home() {
             {/* テーブルに角丸つける @see https://jito-site.com/css-table-radius/ */}
             <table className='
               font-bold
-              min-w-[50rem] md:min-w-full
+              min-w-[45rem] md:min-w-full
               border-t border-l border-separate border-spacing-0 rounded-xl
             '>
               <thead>
                 <tr>
-                  <th className='bg-gray-100 border-r border-b rounded-tl-xl w-64 py-4'></th>
-                  <th className='bg-brand text-white border-r border-b w-64 py-4'>マカミー</th>
-                  <th className='bg-gray-400 text-white border-r border-b w-64 py-4'>A社<br />(サブスクWEB提供)</th>
-                  <th className='bg-gray-400 text-white border-r border-b w-64 rounded-tr-xl py-4'>B社<br />(格安WEB制作提供)</th>
+                  <th className='bg-gray-100 border-r border-b rounded-tl-xl w-40 py-4'></th>
+                  <th className='bg-brand text-white border-r border-b w-40 py-4'>マカミー</th>
+                  <th className='bg-gray-400 text-white border-r border-b w-40 py-4'>A社<br />(サブスクWEB提供)</th>
+                  <th className='bg-gray-400 text-white border-r border-b w-40 rounded-tr-xl py-4'>B社<br />(格安WEB制作提供)</th>
                 </tr>
               </thead>
               <tbody className='text-center'>
@@ -197,7 +197,7 @@ export default function Home() {
                     b: '1',
                   },
                   {
-                    heading: '画像、文章、デザイン全ておまかせ',
+                    heading: '画像、文章、\nデザイン全ておまかせ',
                     makame: '◯',
                     a: '文章のみ',
                     b: '追加オプション',
@@ -216,7 +216,7 @@ export default function Home() {
                   }
                 ].map(({heading, makame, a, b}, index) => (
                   <tr key={index} className='group'>
-                    <td className={`bg-gray-100 border-r border-b py-4 px-12 group-last:rounded-bl-xl`}>{heading}</td>
+                    <td className={`bg-gray-100 border-r border-b py-4 px-2 group-last:rounded-bl-xl whitespace-pre-wrap`}>{heading}</td>
                     <td className='bg-white border-r border-b text-brand py-4'>{makame}</td>
                     <td className='bg-white border-r border-b py-4'>{a}</td>
                     <td className={`bg-white border-r border-b py-4 group-last:rounded-br-xl`}>{b}</td>
