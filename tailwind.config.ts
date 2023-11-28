@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         brand: 'var(--color-brand)',
         primary: 'var(--color-primary)',
-        hint: '#9ca3af', // gray-400
+        hint: '#979797',
       },
     },
     // @see https://tailwindcss.com/docs/container#centering-by-default,
