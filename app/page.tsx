@@ -97,7 +97,9 @@ export default function Home() {
             }
           </ul>
           {/* 24px */}
-          <strong className='text-2xl c-bg-marker-primary'>すべて<span className='text-brand'>マカミーにおまかせ</span>ください！</strong>
+          <p>
+            <strong className='text-2xl c-bg-marker-primary'>すべて<span className='text-brand'>マカミーにおまかせ</span>ください！</strong>
+          </p>
         </SkewSection>
       </SkewBg>
 
