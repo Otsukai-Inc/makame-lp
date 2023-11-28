@@ -15,13 +15,13 @@ export default function Home() {
       <div className='flex justify-center w-full py-20 bg-gradient-to-b from-brand to-[#2CA9D7] relative'>
         <header className="absolute w-full -mt-16 md:-mt-10">
           <SkewBg background='white' padding="py-2" className='flex justify-center'>
-            <Image src="/logo.svg" alt="logo" className='w-40 md:w-60 h-auto' width={325} height={126} />
+            <Image src="/logo.svg" alt="logo" className='w-[224px] md:w-[312px] h-auto' width={325} height={126} />
           </SkewBg>
         </header>
 
         <section className={`
           w-4/5 md:w-3/4
-          pt-20 md:pt-40
+          pt-20 md:pt-40 xl:pt-48
           pb-10 md:pb-20
         `}>
           <div className='flex flex-col md:flex-row items-center justify-center'>
