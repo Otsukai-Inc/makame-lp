@@ -158,8 +158,13 @@ export default function Home() {
       <SkewBg background='dot'>
         <SkewSection
           heading='他サービスとの比較'
+          className='px-0'
         >
-          <div className='w-full flex justify-start md:justify-center overflow-x-scroll md:overflow-x-auto'>
+          <div className='
+            container
+            flex justify-start md:justify-center
+            overflow-x-scroll md:overflow-x-auto
+          '>
             {/* テーブルに角丸つける @see https://jito-site.com/css-table-radius/ */}
             <table className='
               font-bold
