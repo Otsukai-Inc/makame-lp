@@ -330,7 +330,7 @@ export default function Home() {
         <SkewSection>
           <Image src="/home/campaign-ttl.png" alt="ご紹介キャンペーン" width={681/2} height={69/2} />
           <Image src="/home/campaign-cashback.png" alt="7800円キャッシュバック" width={1096/2} height={520/2} className='mb-6' />
-          <p className='text-white'>ご紹介いただいたお客様がご契約された場合、ご紹介者様に初回事務手数料をご返金いたします。</p>
+          <p className='text-white'>ご紹介いただいたお客様がご契約された場合、紹介した方、紹介された方双方に初回事務手数料をご返金いたします。</p>
         </SkewSection>
       </SkewBg>
 
