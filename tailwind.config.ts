@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        h2: ['2rem', '2.8rem'],
+      },
       colors: {
         brand: 'var(--color-brand)',
         primary: 'var(--color-primary)',
