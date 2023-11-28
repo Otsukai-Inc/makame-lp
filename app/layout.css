@@ -1,5 +1,5 @@
 #layout-main {
-  color: rgb(var(--background-rgb));
+  color: var(--color-text-default);
   background: rgb(var(--foreground-rgb));
 }
 
