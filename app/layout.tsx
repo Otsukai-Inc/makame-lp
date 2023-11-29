@@ -1,5 +1,6 @@
 import { Noto_Sans_JP } from "next/font/google";
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import './layout.css'
 
@@ -33,6 +34,8 @@ export const metadata: Metadata = {
   },
 }
 
+const gtmId = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
+
 export default function RootLayout({
   children,
 }: {
@@ -40,7 +43,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body id='layout-main' className={baseFont.className}>{children}</body>
+      <Script
+        id="gtag"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${gtmId}');
+            window.dataLayer = window.dataLayer || [];`,
+        }}
+      />
+      <body id='layout-main' className={baseFont.className}>
+        {/* <!-- Google Tag Manager (noscript) --> */}
+        <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" className='hidden invisible'></iframe></noscript>
+        {/* <!-- End Google Tag Manager (noscript) --> */}
+
+        {children}
+      </body>
     </html>
   )
 }
