@@ -28,7 +28,8 @@ export default function Home() {
             {/* テキスト */}
             <div className='text-white md:w-1/2 text-center md:text-left whitespace-normal'>
               <h6 className='mb-4 font-bold text-sm tracking-[.5em]'>ホームページのサブスク</h6>
-              <h1 className='mb-4 font-bold text-[10vw] md:text-[5vw] md:leading-relaxed'>制作費無料、<br />月々{numberFormatter.format(price)}円でホームページを</h1>
+              <h1 className='mb-4 font-bold text-[10vw] md:text-[5vw] md:leading-relaxed'>制作費無料、<br />月々{numberFormatter.format(price)}円*でホームページを</h1>
+              <p className='mb-8 text-sm'>*税込価格{numberFormatter.format(price * taxRate)}円</p>
               <p className='mb-8'>マカミーは、<br />中小企業・個人事業主に特化したホームページの月額定額サービスです。</p>
 
               <div className='flex items-center justify-center md:justify-start'>
@@ -336,8 +337,29 @@ export default function Home() {
       <SkewBg background='brand'>
         <SkewSection>
           <Image src="/home/campaign-ttl.png" alt="ご紹介キャンペーン" width={681/2} height={69/2} />
-          <Image src="/home/campaign-cashback.png" alt="7800円キャッシュバック" width={1096/2} height={520/2} className='mb-6' />
-          <p className='text-white'>ご紹介いただいたお客様がご契約された場合、紹介した方、紹介された方双方に初回事務手数料をご返金いたします。</p>
+          <Image src="/home/campaign-cashback.png" alt={`${numberFormatter.format(price)}円キャッシュバック`} width={1096/2} height={520/2} className='mb-8' />
+          <p className='text-white mb-8'>ご紹介いただいたお客様がご契約された場合、紹介した方、紹介された方双方に初回事務手数料をご返金いたします。</p>
+          <div className='flex flex-col md:flex-row justify-between gap-6 text-white'>
+            {/* ご契約者様 */}
+            <div className='rounded-xl p-4 flex flex-col items-center gap-4 bg-white/[0.1] md:w-1/2'>
+              <h4 className='border border-white p-1 font-bold'>ご契約者様</h4>
+              <Image src="/home/campaign-customer.png" alt="ご契約者様" width={240/2} height={240/2} />
+              <ul className='list-disc pl-4'>
+                <li>ご契約者様の氏名を、ご紹介者様へお伝えください</li>
+                <li>ご紹介者様のメールアドレスを弊社担当へご連絡いただくとスムーズです</li>
+                <li>ご紹介者様がご契約された場合、{numberFormatter.format(price)}円キャッシュバックを行います</li>
+              </ul>
+            </div>
+            {/* ご紹介者様 */}
+            <div className='rounded-xl p-4 flex flex-col items-center gap-4 bg-white/[0.1] md:w-1/2'>
+              <h4 className='border border-white p-1 font-bold'>ご紹介者様</h4>
+              <Image src="/home/campaign-introducer.png" alt="ご紹介者様" width={240/2} height={240/2} />
+              <ul className='list-disc pl-4'>
+                <li>お申し込みフォームにてご紹介者様の氏名を入力してください</li>
+                <li>WEBサイトリリース後、初月お支払い完了時に、{numberFormatter.format(price)}円キャッシュバックを行います</li>
+              </ul>
+            </div>
+          </div>
         </SkewSection>
       </SkewBg>
 
