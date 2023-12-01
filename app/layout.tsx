@@ -60,7 +60,6 @@ export default function RootLayout({
       />
       <body id='layout-main' className={baseFont.className}>
         {/* <!-- Google Tag Manager (noscript) --> */}
-        <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" className='hidden invisible'></iframe></noscript>
         <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}&gtm_auth=${gtmAuth}&gtm_preview=${gtmPreview}&gtm_cookies_win=x`} height="0" width="0" className="hidden invisible"></iframe></noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
 
