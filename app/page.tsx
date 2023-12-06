@@ -375,6 +375,7 @@ export default function Home() {
               // {href: 'https://otsukaimangatokyo.freshdesk.com/support/solutions/articles/35000032529', text: '利用規約'}, // 弁護士間に合ってないのでいったん消す
               {href: 'https://otsukaimangatokyo.freshdesk.com/support/solutions/articles/35000086437', text: 'プライバシーポリシー'},
               {href: 'https://sites.google.com/otsukai.com/makame-cookie-policy', text: 'クッキーポリシー'},
+              {text:'特定商取引法に基づく表記', href:'https://sites.google.com/otsukai.com/makame-law/'},
             ].map(({href, text}, index) => (
               <li key={index} className='px-2'>
                 <a href={href} target='_blank'>{text}</a>
